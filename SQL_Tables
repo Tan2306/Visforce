@@ -1,0 +1,264 @@
+Tables
+
+Table Name - employee_main_visforce
+Emp_ID
+VARCHAR(10)
+foreign key REFERENCES employee_login_visforce(EMP_ID)
+Primary Key
+Phone
+NUMBER(20)
+Email
+VARCHAR(30)
+
+
+CREATE TABLE EMPLOYEE_MAIN_VISFORCE(
+EMP_ID VARCHAR(10) REFERENCES employee_login_visforce(EMP_ID) on delete cascade PRIMARY KEY,
+PHONE NUMBER(20),
+EMAIL VARCHAR(30)
+);
+
+
+
+Table Name - employee_phone_visforce
+Emp_ID
+Primary Key
+foreign key REFERENCES employee_login_visforce(EMP_ID)
+VARCHAR(10)
+Phone
+NUMBER(20)
+Name
+VARCHAR(20)
+Dob
+DATE
+Department
+VARCHAR(3)
+CHECK DEPARTMENT IN (‘SAL,MAR,SUP’)
+
+
+CREATE TABLE EMPLOYEE_PHONE_VISFORCE(
+EMP_ID VARCHAR(10)  REFERENCES employee_login_visforce(EMP_ID) on delete cascade PRIMARY KEY,
+PHONE NUMBER(20),
+NAME VARCHAR(20),
+DOB DATE,
+DEPARTMENT VARCHAR(3) CONSTRAINT DEPT2 CHECK (DEPARTMENT IN ('SAL','MAR','SUP'))
+);
+
+Table Name - leave_visforce
+Attribute
+Description
+Leave_ID
+Primary Key
+VARCHAR(10)
+Date_of_Leave
+DATE
+Date_of_Return
+DATE
+Reason
+VARCHAR(1500)
+Status
+VARCHAR(3)
+CHECK STATUS IN (‘PEN’,’REJ’,’ACC’)
+Time_Applied
+TIMESTAMP
+Emp_ID
+VARCHAR(10)
+REFERENCES employee_login_visforce(EMP_ID)
+Admin_ID
+VARCHAR(10)
+REFERENCES admin_login_visforce(ADMIN_ID)
+Title
+varchar(50)
+
+
+CREATE TABLE LEAVE_VISFORCE(
+LEAVE_ID VARCHAR(10) PRIMARY KEY,
+DATE_OF_LEAVE DATE,
+DATE_OF_RETURN DATE,
+REASON VARCHAR(1500),
+STATUS VARCHAR(3) CONSTRAINT STAT CHECK (STATUS IN ('PEN','REJ','ACC')),
+TIME_APPLIED TIMESTAMP,
+EMP_ID VARCHAR(10) REFERENCES employee_login_visforce(EMP_ID) on delete cascade,
+ADMIN_ID VARCHAR(10) REFERENCES admin_login_visforce(ADMIN_ID)on delete cascade,
+Title varchar(50)
+);
+
+Table Name - announcement_visforce
+Attribute
+Description
+Announcement_ID
+VARCHAR(10)
+Primary Key
+Date_of_Posting
+DATE
+Time_of_Posting
+TIMESTAMP
+Message
+VARCHAR(1500)
+Admin_ID
+VARCHAR(10)
+REFERENCES admin_login_visforce(ADMIN_ID)
+title
+varchar(30)
+
+
+CREATE TABLE ANNOUNCEMENT_VISFORCE(
+ANNOUNCEMENT_ID VARCHAR(10) PRIMARY KEY,
+DATE_OF_POSTING DATE,
+TIME_of_POSTING TIMESTAMP,
+MESSAGE VARCHAR(1500),
+ADMIN_ID VARCHAR(10) REFERENCES admin_login_visforce(ADMIN_ID) on delete cascade,
+Title varchar(30)
+);
+
+Table Name - employee_login_visforce
+Attribute
+Description
+Emp_ID
+VARCHAR(10)
+Primary Key
+Password
+VARCHAR(20)
+Admin_ID
+VARCHAR(10)
+
+
+
+
+CREATE TABLE EMPLOYEE_LOGIN_VISFORCE(
+EMP_ID VARCHAR(10) PRIMARY KEY,
+PASSWORD VARCHAR(20),
+ADMIN_ID VARCHAR(10) 
+);
+
+Table Name - feedback_visforce
+Attribute
+Description
+Feedback_ID
+VARCHAR(10)
+Primary Key
+Date_of_Posting
+DATE
+Time_of_Posting
+TIMESTAMP
+Feedback_Message
+VARCHAR(1500)
+Admin_Comment
+VARCHAR(1500)
+Emp_ID
+VARCHAR(10)
+ REFERENCES employee_login_visforce(EMP_ID)
+Admin_ID
+VARCHAR(10)
+REFERENCES admin_login_visforce(ADMIN_ID)
+
+
+CREATE TABLE FEEDBACK_VISFORCE(
+FEEDBACK_ID VARCHAR(10) PRIMARY KEY,
+DATE_OF_POSTING DATE,
+TIME_OF_POSTING TIMESTAMP,
+FEEDBACK_MESSAGE VARCHAR(1500),
+ADMIN_COMMENT VARCHAR(1500),
+EMP_ID VARCHAR(10)  REFERENCES employee_login_visforce(EMP_ID) on delete cascade,
+ADMIN_ID VARCHAR(10) REFERENCES admin_login_visforce(ADMIN_ID) on delete cascade
+);
+
+
+
+
+
+Admin_main_visforce
+
+Table Name - admin_login_visforce
+Attribute
+Description
+Admin_ID
+VARCHAR(10)
+Primary Key
+Password
+VARCHAR(20)
+
+
+CREATE TABLE ADMIN_LOGIN_VISFORCE(
+ADMIN_ID VARCHAR(10) PRIMARY KEY,
+PASSWORD VARCHAR(20)
+);
+
+
+
+
+Tablename - targetaudience_main_visforce
+
+
+Serial no
+Serial wise
+Need to create an auto generating thing for subsequent things
+PRIMARY KEY
+name
+
+
+email
+
+
+salary
+
+
+city
+
+
+gender
+Check in (‘F’,’M’)
+address
+
+
+dob
+
+
+
+
+Create table targetaudience_main_visforce
+(serialno number(8) primary key,
+name varchar(30),
+Email varchar(50),
+Salary number(8),
+Location varchar(50),
+Gender varchar(2) check (gender in ('F','M')) ,
+Address varchar(400),
+Dob date);
+
+SELECT TRUNC(TO_NUMBER(SYSDATE - TO_DATE(dob)) / 365.25) AS AGE FROM targetaudience_main_visforce;
+
+
+Create table targetaudience_phone_visforce
+(serialno number(8), 
+Phone varchar(20),
+foreign key (serialno) references targetaudience_main_visforce(serialno) on delete cascade
+);
+
+Drop table  targetaudience_phone_visforce;
+Drop table  targetaudience_main_visforce;
+
+truncate table targetaudience_phone_visforce;
+truncate table targetaudience_main_visforce;
+truncate table pastsales_visforce;
+
+
+
+
+
+Table name= pastsales_visforce
+
+
+Create table pastsales_visforce
+(
+Dateofsale date,
+Buyername varchar(45),
+Address varchar(300),
+Product varchar(50),
+Orderid varchar(100) primary key,
+Price number(5),
+Status varchar(30)
+);
+
+
+
+
