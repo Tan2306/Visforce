@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+
+    <!-- Name on website tab -->
+    <title>Visforce: Login</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/vissmall.png" />
+
+    <!-- Linking JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link href="static/script.js" rel="script" type="text/javascript">
+
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Linking CSS -->
+      <!-- <link rel= "stylesheet" type= "text/css" href= "static/styles.css"> -->
+
+    <!-- Font Awesome-->
+
+    <link rel="fontawesome" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" />
+
+    <!--Google Fonts -->
+    <!-- Navbar font - Roboto Slab, Jumbotron - Exo, Footer -  -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+      background-image: url('static/images/vertical.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Login */
+
+    .vlogo{
+      text-align: center;
+      padding-bottom: 20px;
+      background-color: white;
+      padding-top: 15px;
+    }
+
+    .vlogo-img{
+      width: 200px;
+    }
+
+    .login-main{
+      border-style: solid;
+      border: 0 0 1px 1px;
+      border-color: #6B3356;
+      border-left: none;
+      border-right: none;
+      background-color: rgb(255, 255, 255,0.7);
+
+    }
+
+    .login-head{
+      text-align: center;
+      color: black;
+      font-family: ;
+    }
+
+    .login-head-info{
+      margin-top: 8%; /* this is linked with */
+    }
+
+    .login-form{
+      padding-top: 20px;
+      padding-bottom: 8%; /* THIS FOR MAINTAINING BORDER PADDING */
+    }
+
+    .login-form-info{
+      text-align: center;
+    }
+
+    .dropdown-space{
+      margin-bottom: 5px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 3px;
+      font-family: 'PT Serif', serif;
+      background-color: white;
+
+    }
+     /* ---------------------------------------------------------------------------- */
+
+
+    /* Navbar */
+
+    .vertical-nav {
+      min-width: 17rem;
+      width: 17rem;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s;
+    }
+
+    .page-content {
+      width: calc(100% - 17rem);
+      margin-left: 17rem;
+      transition: all 0.4s;
+    }
+
+    /* for toggle behavior */
+
+    #sidebar.active {
+      margin-left: -17rem;
+    }
+
+    #content.active {
+      width: 100%;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      #sidebar {
+        margin-left: -17rem;
+      }
+      #sidebar.active {
+        margin-left: 0;
+      }
+      #content {
+        width: 100%;
+        margin: 0;
+      }
+      #content.active {
+        margin-left: 17rem;
+        width: calc(100% - 17rem);
+      }
+    }
+
+    .form-submit{
+      box-shadow: 2px 5px 5px grey;
+
+      border: 2px solid white;
+      background-color: transparent;
+
+      color: var(--main-color);
+      font-family: 'PT Serif', serif;
+      font-size: 15px;
+      display: inline;
+      width: 20%;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    .form-submit:hover{
+      /* box-shadow: 2px 2px 2px var(--main-color); */
+      background-color: white;
+
+    }
+    :root {
+      --main-color: #6B3356;
+      --color-dark: #1D2231;
+      --text-grey: #8390A2;
+    }
+    .forgot{
+      margin-top: 1em;
+      background-color:white;
+      border: 2px solid var(--main-color);
+      font-size: 16px;
+      /* width: 70% */
+
+    }
+    .element{
+      margin-top: 10px;
+      border: 1px solid var(--main-color);
+    }
+
+    </style>
+  </head>
+  <body>
+
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+  <section class="vlogo">
+    <img class="vlogo-img" alt="logo" src="static/images/visstossologo.png"/>
+  </section>
+
+  <section class="login-main">
+    <section class="login-head" >
+      <!-- <div class="container-fluid"> -->
+        <h5 class="login-head-info">Welcome! Please sign-in.</h1>
+      <!-- </div> -->
+    </section>
+
+    <section class="login-form">
+      <!-- add top-bottom border -->
+      <form class="login-form-info" method="post">
+        <select class="element" class="dropdown-space" name="usertype" id="usertype">
+          <option value="Admin">Admin</option>
+          <option value="Employee">Employee</option>
+        </select>
+        <br>
+        <input class="element" type="text" id="id" name="id" placeholder="Username " size="20"><br>
+        <input class="element" type="password" id="passwordwd" name="password" placeholder="Password "  size="20"><br><br>
+        <input type="submit" class="form-submit" name="submit"><br><br>
+        <button style="cursor: default;"class="forgot"> Contact Admin In Case of Any Discrepency </a>
+      </form>
+    </section>
+  </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p> Copyright Visstosso 2021 </p>
+    </footer>
+    <!-- -->
+
+  </body>
+</html>

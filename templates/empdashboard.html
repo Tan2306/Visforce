@@ -1,0 +1,506 @@
+<!-- employee -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+
+    <!-- Name on website tab -->
+    <title>Visforce: Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/vissmall.png" />
+
+    <!-- Linking JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link href="static/script.js" rel="script" type="text/javascript">
+
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Linking CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="fontawesome" href="https://stackpath.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/5a6503b1c9.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" />
+
+
+    <!-- Font Awesome-->
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="fontawesome" href="https://stackpath.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/5a6503b1c9.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" /> -->
+
+    <!--Google Fonts -->
+    <!-- Navbar font - Roboto Slab, Jumbotron - Exo, Footer -  -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab&display=swap" rel="stylesheet"> -->
+
+    <style>
+      body {
+        background-image: url('static/images/vertical.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .active{
+        background-color: #FEEEFC;
+      }
+      a:hover{
+        background-color: #FEEEFC;
+      }
+      a:hover>.fas, a:hover>.active, a:hover>.admin links a{
+        /* color: #101128; */
+      }
+      .mini-bar a:hover, .main-bar a:hover{
+        transform: scale(1.1);
+      }
+      .vlogo{
+        text-align: center;
+
+        padding-bottom: 20px;
+      }
+
+      .vlogo-img{
+        max-width: 200px;
+        text-align: center;
+      }
+
+      .admin-dashboard-navbar{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+      }
+
+      .admin-dashboard-navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 225px;
+        background-color: white;
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+        /* text-align: center; */
+      }
+
+      .user-dets-div{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: lightgrey;
+      }
+      .col-xs-4 .row {
+        padding-left: 20px;
+        padding-top: 2px;
+      }
+
+      .admin-links{
+        padding-top: 10px;
+      }
+
+      .admin-links li a{
+        display: block;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-color: black;
+      }
+
+      .font-pic{
+        color: var(--main-color);
+        padding-right: 5px;
+      }
+
+      .mini-bar ul{
+        max-width: 6.4em;
+        text-align: center;
+        font-size: 15px;
+      }
+      .mini-bar .admin-links{
+        font-size: 2em;
+      }
+
+      /* Navbar */
+      @media screen and ( max-width: 800px ) {
+      .mini-bar { display:inline; top:0; position: fixed;}
+      .main-bar { display:none; }
+      .main-content{display: none;}
+      .main-content2 {display: inline-block;}
+      .footer{margin-left: 3em;}
+      .main-row{margin-left: 7em; margin-right: 1em; }
+
+      /* .search-wrapper {margin-left: 40%;} */
+      .main {margin-top:10em; margin-bottom: 3em;}
+      /* .cards {margin-top: 670px;margin-left: 6em;} */
+      /* .empuser{position:absolute;width: 255px ;} */
+      /* .leave-content { height: 78%; width: 70%;left: 28%;top: 21%;} */
+      .form{margin-left: 6em;}
+
+      }
+      @media screen and ( min-width: 801px ) and ( max-width: 1099px ) {
+      .mini-bar  { display:none; }
+      .main-bar { display:inline;top:0; position: fixed; }
+      .main-content2 {display: none;}
+      .main {margin-top:10em; margin-bottom: 3em;}
+      .footer{margin-left: 7em;}
+      .main-row{margin-left: 15em; margin-right: 1em; }
+      .form{margin-left: 12em;}
+
+      }
+      @media screen and ( min-width: 1100px ) {
+      .mini-bar  { display:none; }
+      .main-bar { display:inline; top:0; position: fixed; }
+      .main-content2 {display: none;}
+      .main {margin-top:10em; margin-bottom: 3em;}
+      .footer{margin-left: 7em;}
+      .main-row{margin-left: 15em; margin-right: 1em; }
+
+      .form{margin-left: 12em;}
+      }
+
+      :root {
+        --main-color: #6B3356;
+        --color-dark: #1D2231;
+        --text-grey: #8390A2;
+      }
+        /* --------------Main content-----------> */
+      .main-content {
+          width: calc(100% - 225px);
+          float: right;
+      }
+      .main-content2 {
+
+          width: calc(100% - 6em);
+          float: right;
+      }
+      /* -------------Header---------------> */
+      header {
+          display: grid;
+          /* justify-content: space-between; */
+          padding-top: 13px;
+          background: white;
+          box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+          position: fixed;
+          align-items: left;
+          width: 100%;
+          top: 0;
+          z-index: 100;
+          height: 19%;
+      }
+
+      header h2 {
+          color: var(--main-color);
+          /* position: relative; */
+          margin-left: 5%;
+          height: fit-content;
+          position: relative;
+          float: left;
+          font-size: 40px;
+          background-color: white transparent;
+          background: transparent;
+      }
+
+
+
+      /* Feedback */
+
+      form{
+        border: black;
+        text-align: center;
+        padding-top: 15em;
+        align-content: center;
+      }
+
+      .feed-form{
+        background-color: red;
+
+      }
+
+      .feedback-text{
+        border-left: none;
+        border-right: none;
+        margin-bottom: 1em;
+        /* padding: -2px; */
+        /* position: relative; */
+      }
+      .form-head{
+        background-color: rgb(255,255,255,0.8);
+        width: max-content;
+        /* padding-left: 5em;
+        padding-right: 5em; */
+        padding: 2em 4em;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+
+      .form>label {
+        color: black;
+      }
+
+      .form .feedback-text{
+        color: black;
+      }
+
+      .form-submit{
+        box-shadow: 2px 5px 5px grey;
+        background-color: rgb(255,255,255,0.8);
+
+        border: 2px solid white;
+
+
+        color: var(--main-color);
+        font-family: 'PT Serif', serif;
+        font-size: 15px;
+        display: inline;
+        width: 20%;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+      .form-submit:hover{
+        /* box-shadow: 2px 2px 2px var(--main-color); */
+        background-color: white;
+
+      }
+       form{
+        margin-bottom: 5em;
+      }
+
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        /* margin-top: 2em; */
+        margin-bottom: 4em;
+        /* margin-left: 10px;
+        margin-right: 10px; */
+        width: 33.33%;
+        padding: 8px;
+        height: auto;
+        border: 0.5px solid black;
+        /* border-left: none; */
+        /* border-right: none; */
+        background-color: rgb(255,255,255,0.8);
+        font-weight: 550;
+        color: var(--main-color);
+        margin-bottom: 10px;
+        font-size: 18px;
+        padding: 5px;
+        text-align: center;
+      }
+
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 1000px) {
+        .column {
+          width: 100%;
+        }
+      }
+
+      .head{
+        /* border-style: solid; */
+        /* border: 0 0 1px 1px;
+        border-color: #6B3356;
+        border-left: none;
+        border-right: none; */
+        background-color: rgb(255, 255, 255,0.7);
+        font-weight: 550;
+        color: var(--main-color);
+        margin-bottom: 10px;
+        font-size: 18px;
+        padding: 5px;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: black;
+        padding: 3px;
+        font-family: 'PT Serif', serif;
+        background-color: white;
+        vertical-align: auto;
+        cursor: default;
+      }
+      .footer:hover{
+        text-decoration: none;
+        color: black;
+      }
+    /* -------------------------------------- */
+    </style>
+  </head>
+  <body>
+    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %} -->
+
+    <div class="admin-dashboard-navbar">
+      <div class="main-bar">
+
+      <ul>
+        <li class="user-dets">
+          <img style="margin-left: 10px;" class="vlogo-img" alt="logo" src="static/images/visstossologo.png"/>
+            <div class="user-dets-div">
+              <div class="row">
+                <div class="col-xs-6">
+                    <img class="icon" src="static/images/usericon.png" width="100px" alt="icon">
+                </div>
+
+                <div class="col-xs-4">
+
+                  <div class="row">
+                    <div class="col-xs-4">
+                      {{user[0]}}<br>{{user[1]}}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Employee <!-- If possible, mention kind of emp - sales exec  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <div class="admin-links">
+            <i class="fas fa-house-user"></i>
+            <li><a class="active" href="{{url_for('empdashboard')}}"><i class="fa fa-home font-pic" aria-hidden="true"></i>Dashboard</a></li>
+            <li><a href="{{url_for('myleaves')}}"><i class="fas fa-pen font-pic"></i>My Leaves</a></li>
+            <li><a  href="{{url_for('seemyfeedback')}}"><i class="fas fa-comments font-pic"></i>My Feedbacks</a></li>
+            <li><a href="{{url_for('seeannouncements')}}"><i class="fas fa-bullhorn font-pic"></i>See Announcements</a></li>
+            <li><a  href="{{url_for('accessdatabases_emp')}}"> <i class="fas fa-database font-pic"></i>Access Databases</a></li>
+            <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt font-pic"></i>Log Out</a></li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="mini-bar">
+
+        <ul>
+          <li class="user-dets">
+            <img class="vlogo-img" alt="logo" src="static/images/visstossologo.png" style="width: 100%;">
+
+            <div class="user-dets-div">
+                <img class="icon" src="static/images/usericon.png" width="110%" alt="icon">
+                <br>{{user[0]}}<br>{{user[1]}}<br>Employee
+            </div>
+          </li>
+
+          <div class="admin-links">
+            <i class="fas fa-house-user"></i>
+            <li><a  class="active" href="{{url_for('empdashboard')}}"><i class="fa fa-home font-pic" aria-hidden="true"></i></a></li>
+            <li><a href="{{url_for('myleaves')}}"><i class="fas fa-pen font-pic"></i></a></li>
+            <li><a href="{{url_for('seemyfeedback')}}"><i class="fas fa-comments font-pic"></i></a></li>
+            <li><a href="{{url_for('seeannouncements')}}"><i class="fas fa-bullhorn font-pic"></i></a></li>
+            <li><a href="{{url_for('accessdatabases_emp')}}"><i class="fas fa-database font-pic"></i></a></li>
+            <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt font-pic"></i></a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <label for="">
+            <span class="las la-bars"></span>
+          </label>
+          <h2>
+          Dashboard
+        </h2>
+
+
+      </header>
+
+    </div>
+    <!-- content 2 -->
+    <div class="main-content2">
+      <header>
+        <label for="">
+            <span class="las la-bars"></span>
+          </label>
+          <h2>
+          Dashboard
+        </h2>
+      </header>
+    </div>
+
+    <!-- <div class"feed-form" >
+
+        <form class="form" method="post">
+          <h6 class="form-head"> Give Anonymous Feedback to the Admin.<br>Your identity will be protected. </h6><br><br>
+
+            <textarea class="feedback-text" placeholder="Feedback" required name="feedback" rows="10" cols="34"></textarea><br>
+            <input type="submit" class="form-submit" name="submit">
+        </form>
+
+    </div> -->
+
+
+<div class="main">
+
+    <div class="main-row">
+      <div class="head" style="text-align: center;"> Welcome {{user[1]}}! Here are your updates! </div>
+      <a href="{{url_for('seeannouncements')}}">
+        <div class="column">
+          <h4>New Announcements</h4>
+          <p style="color: black; font-weight: 400">Since your last login, 1 announcement has been made.</p>
+        </div>
+      </a>
+      <a href="{{url_for('seemyfeedback')}}">
+        <div class="column">
+          <h4>New Feedback Update</h4>
+          <p style="color: black; font-weight: 400;">Since your last login, 2 feedbacks have been updated.</p>
+        </div>
+      </a>
+      <a href="{{url_for('myleaves')}}">
+        <div class="column">
+          <h4>New Leave Update</h4>
+          <p style="color: black; font-weight: 400">Since your last login, 1 leave has been updated.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+    <footer class="footer">
+      <p> Copyright Visstosso 2021 </p>
+    </footer>
+
+  </body>
+</html>

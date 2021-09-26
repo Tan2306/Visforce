@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+
+    <!-- Name on website tab -->
+    <title>Visforce: My Leaves</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/vissmall.png" />
+
+    <!-- Linking JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link href="static/script.js" rel="script" type="text/javascript">
+
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Linking CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="fontawesome" href="https://stackpath.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/5a6503b1c9.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" />
+
+
+    <!-- Font Awesome-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="fontawesome" href="https://stackpath.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/5a6503b1c9.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" /> -->
+
+    <!--Google Fonts -->
+    <!-- Navbar font - Roboto Slab, Jumbotron - Exo, Footer -  -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Roboto+Slab&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Exo&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab&display=swap" rel="stylesheet"> -->
+
+
+    <style>
+        body {
+          background-image: url('static/images/vertical.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .active{
+          background-color: #FEEEFC;
+        }
+        a:hover{
+          background-color: #FEEEFC;
+        }
+        a:hover>.fas, a:hover>.active, a:hover>.admin links a{
+          /* color: #101128; */
+        }
+        .mini-bar a:hover, .main-bar a:hover{
+          transform: scale(1.1);
+        }
+        .admin-dashboard-navbar{
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+        }
+
+        .admin-dashboard-navbar ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          width: 225px;
+          background-color: white;
+          height: 100%;
+          position: fixed;
+          overflow: auto;
+          /* text-align: center; */
+        }
+
+        .user-dets-div{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          background-color: lightgrey;
+        }
+        .col-xs-4 .row {
+          padding-left: 20px;
+          padding-top: 2px;
+        }
+
+        .admin-links{
+          padding-top: 10px;
+        }
+        .admin-links li a{
+          display: block;
+          color: black;
+          padding: 8px 16px;
+          text-decoration: none;
+          border-color: black;
+        }
+
+        .font-pic{
+          color: var(--main-color);
+          padding-right: 5px;
+        }
+
+        .mini-bar ul{
+          max-width: 6.4em;
+          text-align: center;
+          font-size: 15px;
+          float:left;
+
+        }
+        .mini-bar .admin-links{
+          font-size: 2em;
+        }
+
+    /* Navbar */
+        .main {
+          justify-content: center;
+        }
+
+        @media screen and ( max-width: 800px ) {
+        .mini-bar { display:inline; top: 0; position: fixed;  }
+        .main-bar { display:none; }
+        .main-content{display: none;}
+        .main-content2 {display: inline-block;}
+        .form-box{ left: 6.1rem;}
+        .main {margin-top: 7em; }
+        .cards {grid-template-columns: repeat(1,1fr);}
+        /* .empuser{position:absolute;width: 370px ;left: 6.2rem;margin-top: 50px; font-size: 18px;} */
+        .leave-content { height: auto; max-width: 70%; left: 29%; right: 10%; top: 9.5em;}
+        .main{margin-left: 6em;}
+        .dateleave{display: none;}.dateleave2{display: inline;}
+        .main-search{margin-top: 12em; margin-bottom: 2em;}
+        .search-form{ padding: 20px;  width: 340px; margin: 0 auto;}
+        .footer{margin-left: 3em;}
+
+        }
+        @media screen and ( min-width: 801px ) and ( max-width: 1099px ) {
+        .mini-bar  { display:none; }
+        .main-bar { display:inline; top: 0; position: fixed;}
+        .main-content2 {display: none;}
+        .main{margin-left: 230px;}
+        .cards{grid-template-columns: repeat(2,1fr); grid-column-gap: 35%; }
+        /* .empuser{position: fixed;width: 260px ;} */
+        .leave-content{ max-height: 75%; max-width: 70%; left: 30%; right: 10%; top: 9.5em;}
+        .dateleave{display: flex;}.dateleave2{display: none;}
+        .main-search{margin-top: 12em; margin-bottom: 2em;}
+        .search-form{ padding: 20px;  width: 340px; margin: 0 auto;}
+        .footer{margin-left: 7em;}
+
+        }
+        @media screen and ( min-width: 1100px ) {
+        .mini-bar  { display:none; }
+        .main-bar { display:inline; top: 0; position: fixed; }
+        .main-content2 {display: none;}
+        .main{margin-left: 15em;}
+        .form-box{left: 25%;}
+        .cards{grid-template-columns: repeat(3,1fr); grid-column-gap: 5rem;}
+        /* .empuser{position: fixed;width: 290px ;} */
+        .leave-content{max-height: 75%; max-width: 70%; left: 30%; right: 10%; top: 9.5em;}
+        .dateleave{display: flex;}.dateleave2{display: none;}
+        .main-search{margin-top: 12em; margin-bottom: 2em;}
+        .search-form{ padding: 20px;  width: 340px; margin: 0 auto;}
+        .footer{margin-left: 7em;}
+        }
+        :root {
+          --main-color: #6B3356;
+          --color-dark: #1D2231;
+          --text-grey: #8390A2;
+      }
+        /* --------------Main content-----------> */
+      .main-content {
+          width: calc(100% - 225px);
+          float: right;
+      }
+      .main-content2 {
+
+          width: calc(100% - 6em);
+          float: right;
+      }
+      /* -------------Header---------------> */
+      header {
+          display: grid;
+          /* justify-content: space-between; */
+          padding-top: 13px;
+          background: white;
+          box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+          position: fixed;
+          align-items: left;
+          width: 100%;
+          top: 0;
+          z-index: 100;
+          height: 19%;
+          max-height: 10em;
+
+      }
+
+        header h2 {
+            color: var(--main-color);
+            /* position: relative; */
+            margin-left: 5%;
+            height: fit-content;
+            position: relative;
+            float: left;
+            font-size: 40px;
+            background-color: white transparent;
+            background: transparent;
+        }
+
+        /* -------> Main -------------> */
+
+        .cards {
+          display: grid;
+          cursor: pointer;
+          margin-left: auto;
+          margin-right: auto;
+          width: calc(50%);
+          padding-left: 27px;
+          margin-bottom: 50px;
+      }
+      .card-single {
+          display: flex;
+          justify-content: space-between;
+          width: max-content;
+          /* min-width:300px; */
+      	  box-shadow: 0 2px 10px white;
+          background: rgba(128, 128, 128, 0.075);
+          background-color: white;
+          border-style: solid;
+          border-color: var(--main-color);
+          margin-bottom: 2em;
+      }
+      .delete-submit{
+        background-color: darkred;
+        border: 2px red;
+        color: white;
+        font-family: 'PT Serif', serif;
+        font-size: 17px;
+        width: 100%;
+
+      }
+    .delete-submit:hover {
+        box-shadow: 0 10px 5em var(--main-color);
+        border-color:white;
+        background-color: red;
+        color: black;
+        font-weight: 700;
+        transition: all 0.4s;
+    }
+
+      .card-content h4{
+          padding: 0 20px;
+          font-size: 18px;
+          margin-top: 10px;
+      }
+
+      .content{
+          color: rgb(149 ,21 , 153);
+          opacity: .7;
+          padding: 0px 12px;
+          font-weight: 500;
+          font-size: 17px;
+      }
+      .reason{
+      	font-size: 18px;
+        padding: 8px 12px;
+        color: #000;
+      	font-weight: 600;
+      	margin: 0;
+      }
+
+        /* -------------> Announcement-Make -------------> */
+
+      .form-box {
+          position: fixed;
+          height: 90% fit-content;
+          /* float: right; */
+          width: calc(40% + 170px);
+          padding:  35px 35px;
+          display: none;
+          z-index: 150;
+          /* align-items: left; */
+          top: 20%;
+          background-color: white;
+          border: 2px solid var(--main-color);
+          box-shadow: 7px 10px 3px 0 var(--main-color);
+          min-height: 60%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .form-box h2{
+          /* align-self: center;
+          margin: 0 30%;
+          cursor: pointer; */
+      }
+
+      /*  CROSS  */
+      .form-box h5{
+        float: right;
+        padding: 5px;
+        font-size: 25px;
+        font-weight: 700;
+
+      }
+      .form-box h5:hover{
+        background-color: red;
+    	   transition: all 0.4s;
+        cursor: pointer;
+      }
+      /* end */
+
+
+      /* .input-box {
+          margin: 5px;
+      } */
+      .input-box input , textarea{
+          width: 95%;
+          max-height: 200px;
+          /* background-color: white; */
+          color: rgb(107,51,86);
+          font-weight: 550;
+      }
+      .btnpost{
+          /* float: right; */
+          margin: 10px;
+          /* margin-right: none; */
+          width: 70px;
+          font-size: 23px;
+          color: var(--main-color);
+          box-shadow: 2px 5px 4px 0px var(--main-color);
+          padding: 0 3px;
+          font-weight: 650;
+      }
+
+      .btnpost:hover{
+          color: #fff;
+          background-color: rgba(0, 255, 55, 0.822);
+      	  transition: all 0.4s;
+          box-shadow: 2px 5px 4px 0px rgba(82, 209, 51, 0.925);
+      }
+
+      .dateleave{
+        padding: 0 5% 0 0 !important;
+        font-size: 16px;
+        width: 80% min-content;
+        /* display: flex; */
+        justify-content:space-around;
+      }
+      /* date of leave and return  */
+      .dateleave2{
+        /* display: none; */
+        font-size: 16px;
+        font-weight: 700;
+      }
+      /* -------------> Anc sign -----------> */
+      .addanc{
+        float: right;
+      }
+      .addanc h1{
+          font-size: 90px;
+          height: 100%;
+          width: 100%;
+          /* margin-top: -44px;
+          margin-left: -5px; */
+          /* margin-left: 3px; */
+          color: var(--main-color);
+          cursor: pointer;
+      }
+      .addanc:hover{
+        opacity: 1;
+      	transform: scale(1.15);
+      	transition: all 0.4s;
+      }
+      /* ---------> Filter Details ----------> */
+
+      .form-submit{
+        background-color: white;
+        box-shadow: 2px 2px 2px var(--main-color);
+        border: 1px solid var(--main-color);
+        color: black;
+        font-family: 'PT Serif', serif;
+        font-size: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+      }
+
+      .form-submit:hover{
+        color: var(--main-color);
+        box-shadow: 2px 5px 5px grey;
+        border: 1px solid white;
+        transition: 0.2s;
+      }
+      /* -------------> Leave open <------------- */
+
+      .leave-box{
+        display: none;
+      }
+      .leave-content{
+        background: var(--main-color);
+        position: fixed;
+        padding-bottom: 2em;
+        align-items: left;
+        display: inline;
+      }
+      .leave-dets{
+        background-color: #fff;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 30px;
+        padding: 10px;
+        display: block;
+        font-size: 14px;
+      }
+      .leave-title{
+        background-color: #fff;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 25px;
+        padding: 10px;
+      }
+      .leave-head {
+        font-family: 'PT Serif', serif;
+        box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+        margin-right: 5px;
+      }
+      .leave-info{
+        background-color: #fff;
+        /* height: 60%; */
+        width: 80%;
+        margin: 25px 10% 15px 10%;
+        padding: 5px;
+        /* box-shadow: 4px 4px 10px rgba(0,0,0,0.2); */
+      }
+      .close{
+        float: right;
+        /* position: absolute; */
+        /* position: static; */
+        padding: 5px;
+        font-size: 25px;
+        font-weight: 700;
+      }
+      .close:hover{
+        background-color: red;
+      	transition: all 0.4s;
+        cursor: pointer;
+        box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+
+      }
+
+      .main-search form{
+        border-style: dashed;
+        border-color: var(--main-color);
+        padding: 20px;
+        width: 400px;
+        background-color: rgb(255, 255, 255,0.8);
+        font-weight: 550;
+        /* color: */
+
+
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 3px;
+        font-family: 'PT Serif', serif;
+        background-color: white;
+        vertical-align: auto;
+      }
+
+      #edit-det{
+
+        margin-right: 1em;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="admin-dashboard-navbar">
+      <div class="main-bar">
+
+      <ul>
+        <li class="user-dets">
+          <img style="margin-left: 10px;" class="vlogo-img" alt="logo" src="static/images/visstossologo.png"/>
+            <div class="user-dets-div">
+              <div class="row">
+                <div class="col-xs-6">
+                    <img class="icon" src="static/images/usericon.png" width="100px" alt="icon">
+                </div>
+
+                <div class="col-xs-4">
+
+                  <div class="row">
+                    <div class="col-xs-4">
+                      {{user[0]}}<br>
+                      {{user[1]}}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Employee
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <div class="admin-links">
+            <li style="border: 2px solid var(--main-color); cursor: pointer;"><a onclick="appear1()"><i class="fas fa-plus-circle font-pic"></i> New Leave Request</a></li><br>
+            <li><a href="{{url_for('empdashboard')}}"><i class="fa fa-home font-pic" aria-hidden="true"></i>Dashboard</a></li>
+            <li><a class="active"><i class="fas fa-pen font-pic"></i>My Leaves</a></li>
+            <li><a href="{{url_for('seemyfeedback')}}"><i class="fas fa-comments font-pic"></i>My Feedbacks</a></li>
+            <li><a href="{{url_for('seeannouncements')}}"><i class="fas fa-bullhorn font-pic"></i>See Announcements</a></li>
+            <li><a  href="{{url_for('accessdatabases_emp')}}"> <i class="fas fa-database font-pic"></i>Access Databases</a></li>
+            <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt font-pic"></i>Log Out</a></li>
+          </div>
+        </ul>
+      </div>
+
+
+      <div class="mini-bar">
+        <ul>
+          <li class="user-dets">
+            <img class="vlogo-img" alt="logo" src="static/images/visstossologo.png" style="width: 100%;">
+
+            <div class="user-dets-div">
+                <img class="icon" src="static/images/usericon.png" width="110%" alt="icon">
+                <br>{{admin_id}}<br>Admin
+            </div>
+          </li>
+
+        <div class="admin-links">
+          <li style="border: 2px solid var(--main-color); cursor: pointer;"><a onclick="appear1()"><i class="fas fa-plus-circle font-pic"></i></a></li><br>
+          <li><a  href="{{url_for('empdashboard')}}"><i class="fa fa-home font-pic" aria-hidden="true"></i></a></li>
+            <li><a class="active"  href="{{url_for('myleaves')}}"><i class="fas fa-pen font-pic"></i></a></li>
+            <li><a href="{{url_for('seemyfeedback')}}"><i class="fas fa-comments font-pic"></i></a></li>
+            <li><a href="{{url_for('seeannouncements')}}"><i class="fas fa-bullhorn font-pic"></i></a></li>
+            <li><a href="{{url_for('accessdatabases_emp')}}"><i class="fas fa-database font-pic"></i></a></li>
+            <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt font-pic"></i></a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+  <div class="main-content">
+    <header>
+      <label for="">
+          <span class="las la-bars"></span>
+        </label>
+        <h2>
+        My Leaves
+      </h2>
+
+    </header>
+  </div>
+
+  <div class="main-content2">
+    <header>
+      <label for="">
+          <span class="las la-bars"></span>
+        </label>
+        <h2>
+          My Leaves
+        </h2>
+            </header>
+      </div>
+
+<!-- Filter  -->
+<div class="main" id="main">
+  <div class="main-search" >
+    <form class="search-form" method="POST" >
+      <label for="">Status: </label>
+        <select style="margin-left: 7em;" id="edit-det" name="status" id="gender">
+          {%if querytabs[0]=="pen"%}
+          <option value="pen" selected="selected">Pending</option>
+          {%else%}
+          <option value="pen" >Pending</option>
+          {%endif%}
+
+          {%if querytabs[0]=="acc"%}
+          <option value="acc" selected="selected">Accepted</option>
+          {%else%}
+          <option value="acc" >Accepted</option>
+          {%endif%}
+
+          {%if querytabs[0]=="rej"%}
+          <option value="rej" selected="selected">Rejected</option>
+          {%else%}
+          <option value="rej" >Rejected</option>
+          {%endif%}
+
+          {%if querytabs[0]=="all"%}
+          <option value="all" selected="selected">All</option>
+          {%else%}
+          <option value="all" >All</option>
+          {%endif%}
+        </select>
+
+        <br>
+        <label for="">Date of Leave: </label>
+        <input style="margin-left: 1em;" type="date" id="edit-det" name="dateofleave" value={{querytabs[1]}} size="30"><br>
+        <label for="">Date of Return: </label>
+        <input style="margin-left: 0.65em;" type="date" id="edit-det" name="dateofreturn" value={{querytabs[2]}} size="30"><br><br>
+        <!-- <label for=""> Query by Employee Details: </label><br>
+        {%if querytabs[3]==""%}
+        <input type="text" id="edit-det" name="searchbox" placeholder="Employee ID, Department, Name" size="30"><br>
+        {%else%}
+        <input type="text" id="edit-det" name="searchbox" value={{querytabs[3]}} size="30"><br> -->
+        <!-- {%endif%} -->
+
+
+        <br><input type="submit" class="form-submit" name="submit">
+      </form>
+    </div>
+  </div>
+
+
+<!-- end of filter -->
+
+<section>
+  <div class="cards">
+{%for i in info%}
+
+
+<div class="card-single" onclick="appear()">
+  <div class="card-content">
+      <h5 class="reason">Duration: <br>{{i.dateofleave}}-{{i.dateofreturn}}</h5>
+      <!-- <div class="reason"></div> -->
+      <div class="content">
+          {{i.status}}<br>
+          by {{i.emp_id}}
+      </div>
+      <form method="POST">
+        <input style="display:none;"  type="text" id="title" name="leaveid" readonly value={{i.leaveid}} size="30"><br>
+        <input style="display:none;"  type="text" id="title" name="delete" readonly value='0' size="30"><br>
+        <input class="delete-submit" style="float:right;" type="submit" name="Delete" value="Delete"></input>
+      </form>
+  </div>
+</div>
+<div class="leave-box" id="box">
+        <div class="leave-content">
+          <div class="close" onclick="appear()">X</div>
+          <div class="leave-dets">
+              <div class="">
+                <a class="leave-head">Leave ID:  </a>
+                {{i.leaveid}}
+              </div>
+              <div class="">
+                <a class="leave-head">Duration: </a>
+                {{i.dateofleave}} - {{i.dateofreturn}}
+              </div>
+              <div class="">
+                <a class="leave-head">Request Time:  </a>
+                {{i.time}}
+              </div>
+              <div class="">
+                <a class="leave-head">Department:   </a>
+                {{i.department}}
+              </div>
+              <div class="">
+                <a class="leave-head">Admin ID:   </a>
+                {{i.admin_id}}
+              </div>
+          </div>
+          <div class="leave-dets">
+            <a class="leave-head">Status:  </a>
+            {{i.status}}
+          </div>
+          <div class="leave-dets">
+            <a class="leave-head">Reason: </a>
+            {{i.reason}}
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </section>
+
+    <div class="main">
+      <div class="form-box" id="box1">
+          <h5 onclick="appear1()">X</h5>
+          <h2>Request Leave</h2>
+          <div class="input-box">
+            <form method="POST" align="left" id="leaveform">
+            <h4>Subject: </h4>
+            <input type="text" name="title" placeholder="Doctor Appointment, Passport Office Visit..." required="true" id="title"><br>
+            <div class="dateleave">
+              <h4>Date of Leave: </h4>
+              <h4>Date of Return: </h4>
+            </div>
+            <div class="dateleave">
+              <input type="date" id="edit-det" name="dateofleave" required value={{querytabs[1]}} size="30">
+              <input type="date" id="edit-det" name="dateofreturn"  required value={{querytabs[2]}}  size="30">
+            </div>
+            <!-- <div class="dateleave2">
+              Date of Leave:
+              <input type="date" id="edit-det" name="dateofleave" required="true"  value={{querytabs[1]}} size="30">
+              Date of Return:
+              <input type="date" id="edit-det" name="dateofreturn" required="true" value={{querytabs[2]}} size="30">
+            </div> -->
+            <h4>Reason: </h4>
+            <input type="text" name="reason" id="reason"  required="true" placeholder="Enter Request Information Here...">
+            <br><input type="submit" class="form-submit" name="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <script>
+
+    function appear() {
+  var x = document.getElementById("box");
+    var y = document.getElementById("main");
+    var z = document.getElementById("empuser");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.opacity = 0.6;
+      z.style.opacity = 0.6
+    } else {
+      x.style.display = "none";
+      y.style.opacity = 1;
+      z.style.opacity = 1;
+    }
+  }
+
+  function appear1() {
+    var x = document.getElementById("box1");
+    var y = document.getElementById("main");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.opacity = 0.6;
+      z.style.opacity = 0.6;
+    } else {
+      x.style.display = "none";
+      y.style.opacity = 1;
+      z.style.opacity = 1;
+    }
+  }
+
+  </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <p> Copyright Visstosso 2021 </p>
+  </footer>
+  <!-- -->
+
+</body>
+
+</html>
