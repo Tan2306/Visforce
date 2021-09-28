@@ -947,25 +947,25 @@ def admin_accessvisdatabases_targetaudience():
 
         
         if input_name:
-            print("OLOLOLOname")
+#             print("OLOLOLOname")
             querytabs[0]=input_name
             input_name="%"+input_name+"%"
             cursor.execute("""select * from temp where upper(name) like upper(:x1) order by serialno asc""",[input_name])
             result1=cursor.fetchall()            
         if input_email:
-            print("OLOLOLO")
+#             print("OLOLOLO")
             querytabs[1]=input_email
             input_email="%"+input_email+"%"
             cursor.execute("""select * from temp where upper(email) like upper(:x1) order by serialno asc""",[input_email])
             result2=cursor.fetchall()
         if input_phone:
-            print("OLOLOLOphone")
+#             print("OLOLOLOphone")
             querytabs[2]=input_phone
             input_phone="%"+input_phone+"%"
             cursor.execute("""select * from temp where serialno in (select serialno from targetaudience_phone_visforce where phone like :x1) order by serialno asc""",[input_phone])
             result3=cursor.fetchall()            
         if input_location:
-            print("OLOLOLOlocation")
+#             print("OLOLOLOlocation")
             querytabs[3]=input_location
             input_location="%"+input_location+"%"
             cursor.execute("""select * from temp where upper(location) like upper(:x1) order by serialno asc""",[input_location])
@@ -985,12 +985,12 @@ def admin_accessvisdatabases_targetaudience():
             result5=cursor.fetchall()
             
         if input_salary_lower:
-            print("OLOLOLOsallow")
+#             print("OLOLOLOsallow")
             querytabs[5]=input_salary_lower
             cursor.execute("""select * from temp where salary>=:x1 order by serialno asc""",[input_salary_lower])
             result6=cursor.fetchall()
         if input_salary_upper:
-            print("OLOLOLO")
+#             print("OLOLOLO")
             querytabs[6]=input_salary_upper
             cursor.execute("""select * from temp where salary<=:x1 order by serialno asc""",[input_salary_upper])
             result7=cursor.fetchall()       
@@ -998,7 +998,7 @@ def admin_accessvisdatabases_targetaudience():
         
         querytabs[9]=input_agenull
         if input_agenull==['0']:#include non dob entries
-            print("OLOLOLO")
+#             print("OLOLOLO")
             
             if input_age_lower:
                 querytabs[7]=input_age_lower
@@ -1129,7 +1129,7 @@ def admin_accessvisdatabases_pastsales():
         
 
         if input_buyername:
-            print("OLOLOLOname")
+#             print("OLOLOLOname")
             querytabs[0]=input_buyername
             input_buyername="%"+input_buyername+"%"
             cursor.execute("""select * from pastsales_visforce where upper(buyername) like upper(:x1)""",[input_buyername])
@@ -1137,7 +1137,7 @@ def admin_accessvisdatabases_pastsales():
             
         if input_dateofsale!="": #dateofsale
             print("queryyyy[1]",querytabs[1])
-            print("OLOLOLOdate")
+#             print("OLOLOLOdate")
             htmldate=input_dateofsale
             print("htmldate",htmldate)
             print("input_dateofsale=",input_dateofsale)
@@ -1147,44 +1147,44 @@ def admin_accessvisdatabases_pastsales():
             result1=cursor.fetchall()
             
         if input_product:
-            print("OLOLOLOpro")
+#             print("OLOLOLOpro")
             querytabs[2]=input_product
             input_product="%"+input_product+"%"
             cursor.execute("""select * from pastsales_visforce where upper(product) like upper(:x1)""",[input_product])
             result2=cursor.fetchall()
         if input_orderid:
-            print("OLOLOLOorder")
+#             print("OLOLOLOorder")
             querytabs[3]=input_orderid
             input_orderid="%"+input_orderid+"%"
             cursor.execute("""select * from pastsales_visforce where upper(orderid) like upper(:x1)""",[input_orderid])
             result3=cursor.fetchall()
             
         if input_status=="delivered":
-            print("OLOLOLOstatus")
+#             print("OLOLOLOstatus")
             querytabs[4]=input_status
             input_status="%"+input_status+"%"
             cursor.execute("""select * from pastsales_visforce where upper(status) like upper(:x1)""",[input_status])
             result4=cursor.fetchall()
         elif input_status=="picked":
-            print("OLOLOLOsta")
+#             print("OLOLOLOsta")
             querytabs[4]=input_status
             input_status="%"+input_status+"%"
             cursor.execute("""select * from pastsales_visforce where upper(status) like upper(:x1)""",[input_status])
             result4=cursor.fetchall()
         else:#all
-            print("OLOLOLOsta")
+#             print("OLOLOLOsta")
             querytabs[4]==input_status
             cursor.execute("""select * from pastsales_visforce """)
             result4=cursor.fetchall()
 
         if input_price_lower:
-            print("OLOLOLOlow")
+#             print("OLOLOLOlow")
             querytabs[5]=input_price_lower
             cursor.execute("""select * from pastsales_visforce where price>=:x1 """,[input_price_lower])
             result5=cursor.fetchall()
             
         if input_price_upper:
-            print("OLOLOLOhigh")
+#             print("OLOLOLOhigh")
             querytabs[6]=input_price_upper
             cursor.execute("""select * from pastsales_visforce where price<=:x1""",[input_price_upper])
             result6=cursor.fetchall()
@@ -1293,13 +1293,13 @@ def updatedatabases():
             flash("Please login first")
             return redirect(url_for('login'))
         #---------------------------------------------
-        print("here")
+#         print("here")
         if 'file' not in request.files:
             flash('No file part')
             return redirect(url_for("updatedatabases"))
-        print("here2")
+#         print("here2")
         file = request.files['file']
-        print("here3")
+#         print("here3")
         if file.filename == '':
             print("no file name")
             flash('No selected file')
