@@ -1,7 +1,8 @@
 # Visforce
 Visforce
 
-General Description: VisForce is an employee interface for a small business enterprise named ******, which is based in Delhi. ***** is a brand specialising in leather products like belts, wallets, etc., largely selling on Amazon, Flipkart, and their own website. The company required an employee interface website to cater to its small workforce (about 20-30 people), whose major requirements are outlined below. 
+General Description: 
+VisForce is an employee interface for a small business enterprise named ******, which is based in Delhi. ***** is a brand specialising in leather products like belts, wallets, etc., largely selling on Amazon, Flipkart, and their own website. The company required an employee interface website to cater to its small workforce (about 20-30 people), whose major requirements are outlined below. 
 Visforce is designed to help employees manage and access company data in an efficient manner. We focus on the databases provided by them, specifically, their target audiences, supplier information, and past sales. 
 
 Major Requirements: There will be two types of users in our software. The Employees and the Admin. They would have a varying set of use cases as discussed below.
@@ -27,13 +28,14 @@ Note: Additionally, we have other databases for the functioning of our website, 
 
 Motivation: VisForce is an attempt to sort out general problems faced by SME business owners daily, such as managing databases quickly and more efficiently. It is a great opportunity to test our skills and employ the knowledge of Database Management and Software Engineering that we have gained in our courses. 
 
-ER Diagram Assumptions
+ER Diagram Assumptions -
 If the admin wishes to use employee functionality then they must log in with their own employee login (as admin is primarily an employee of the company).
 There is only one admin in this system.
 There are many employees in the system and they are added to the system by the admin.
 Employee logins can be deleted by the admin (on termination).
+
 VisDatabases are provided by our client and are a collective name termed to refer to three databases.
-Target Audience records 
-Past sales records
-Supplier contact information 
+> Target Audience records 
+> Past sales records
+> Supplier contact information 
 
